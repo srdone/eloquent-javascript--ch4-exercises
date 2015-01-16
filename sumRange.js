@@ -1,9 +1,11 @@
 // Write a range function that takes two arguments (start and end)
 // It should return an array of all numbers froms start to end (inclusive)
 
-var range = function(start, end) {
+var range = function(start, end, step) {
+  step = step || 1;
   var result = [];
-  for (var i = start; i <= end; i++) {
+  var posStep = (step > 0);
+  for (var i = start; posStep ? (i <= end) : (i >= end); i += step) {
     result.push(i);
   }
   return result;
@@ -28,3 +30,7 @@ var sum = function(arr) {
 
 //test
 console.log('sum(range(1, 10)): ' + sum(range(1, 10)));
+
+//test step function
+console.log('range(5,2,-1): ' + range(5,2,-1));
+console.log('range(1,10,2): ' + range(1,10,2));
