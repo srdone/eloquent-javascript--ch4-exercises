@@ -11,3 +11,16 @@ var reverseArray = function(arr) {
 
 //test
 console.log(reverseArray(["A", "B", "C"]));
+
+var reverseArrayInPlace = function(arr) {
+  // javascript is pass by reference on objects, so returning operating on
+  // the arr object passed in should operate on arr in place
+  for (var i = 0; i < arr.length; i++) {
+    arr.splice(i, 0, arr.pop());
+  }
+  return arr;
+};
+
+var testArray = ['A', 'B', 'C'];
+reverseArrayInPlace(testArray);
+console.log(testArray);
