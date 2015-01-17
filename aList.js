@@ -13,7 +13,8 @@ var arrayToList = function(arr) {
 };
 
 //test
-console.log(arrayToList([10, 20]));
+var ans1 = arrayToList([10, 20]);
+console.log(ans1);
 
 // converts a given list to an array
 var listToArray = function(list) {
@@ -29,4 +30,15 @@ var listToArray = function(list) {
 };
 
 //test
-console.log(listToArray(arrayToList([10, 20, 30])));
+var ans2 = listToArray(arrayToList([10, 20, 30]));
+console.log(ans2);
+
+var prepend = function(element, list) {
+  var newList = {};
+  newList.value = element;
+  newList.rest = list;
+  return newList;
+};
+
+var ans3 = prepend(5, ans1);
+console.log(ans3);
