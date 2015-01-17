@@ -15,4 +15,18 @@ var arrayToList = function(arr) {
 //test
 console.log(arrayToList([10, 20]));
 
+// converts a given list to an array
+var listToArray = function(list) {
+  var subList = list;
+  var result = [];
+  do {
+    result.push(subList.value);
+    subList = subList.rest;
+  } while (subList.rest !== null);
+  //when sublist.rest is null, there is still one value left to push
+  result.push(subList.value);
+  return result;
+};
 
+//test
+console.log(listToArray(arrayToList([10, 20, 30])));
